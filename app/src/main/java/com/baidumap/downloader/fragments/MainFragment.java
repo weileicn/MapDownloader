@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,11 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     View mapCateItem3;
     View mapCateItem4;
     View mapAboutItem;
+
+    String string1;
+    String string2;
+    String string3;
+    String string4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,7 +68,6 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         mapCateItem3.setOnClickListener(this);
         mapCateItem4.setOnClickListener(this);
         mapAboutItem.setOnClickListener(this);
-
         updateIndicator();
         initViewPager();
         ((TextView)getActivity().findViewById(R.id.titlebar_title_tv)).setText("主页");
@@ -72,6 +77,11 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public void onResume() {
         super.onResume();
         viewPager.onResume();
+        string1 = ((TextView)mapCateItem1.findViewById(R.id.map_category_item_text)).getText().toString();
+        string2 = ((TextView)mapCateItem2.findViewById(R.id.map_category_item_text)).getText().toString();
+        string3 = ((TextView)mapCateItem3.findViewById(R.id.map_category_item_text)).getText().toString();
+        string4 = ((TextView)mapCateItem4.findViewById(R.id.map_category_item_text)).getText().toString();
+        Log.d("weilei",string1);
     }
 
     @Override
@@ -183,16 +193,24 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.map_category_item1:
-                startActivity(new Intent(getActivity(), DownloadActivity.class));
+                Intent intent1 = new Intent(getActivity(), DownloadActivity.class);
+                intent1.putExtra("category",string1);
+                startActivity(intent1);
                 break;
             case R.id.map_category_item2:
-                startActivity(new Intent(getActivity(), DownloadActivity.class));
+                Intent intent2 = new Intent(getActivity(), DownloadActivity.class);
+                intent2.putExtra("category",string2);
+                startActivity(intent2);
                 break;
             case R.id.map_category_item3:
-                startActivity(new Intent(getActivity(), DownloadActivity.class));
+                Intent intent3 = new Intent(getActivity(), DownloadActivity.class);
+                intent3.putExtra("category",string3);
+                startActivity(intent3);
                 break;
             case R.id.map_category_item4:
-                startActivity(new Intent(getActivity(), DownloadActivity.class));
+                Intent intent4 = new Intent(getActivity(), DownloadActivity.class);
+                intent4.putExtra("category",string4);
+                startActivity(intent4);
                 break;
             case R.id.map_about_item:
                 startActivity(new Intent(getActivity(), AboutActivity.class));

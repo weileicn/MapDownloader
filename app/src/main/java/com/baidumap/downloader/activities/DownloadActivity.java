@@ -12,6 +12,6 @@ public class DownloadActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
-        ((TextView)findViewById(R.id.titlebar_title_tv)).setText("下载");
+        ((TextView)findViewById(R.id.titlebar_title_tv)).setText(getIntent().getStringExtra("category")+"(下载)");
     }
 }
