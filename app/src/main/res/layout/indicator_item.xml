@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+    <ImageView
+            android:id="@+id/point_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/point_normal"
+            android:visibility="visible"
+            android:paddingLeft="@dimen/banner_indicator_margin"
+            android:paddingRight="@dimen/banner_indicator_margin"/>
+
+    <ImageView
+            android:id="@+id/point_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:layout_margin="0dp"
+            android:src="@drawable/point_selected"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/banner_indicator_margin"
+            android:paddingRight="@dimen/banner_indicator_margin"/>
+</RelativeLayout>

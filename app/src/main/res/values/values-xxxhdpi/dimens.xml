@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="divider_height">3px</dimen>
+    <dimen name="custom_toast_y_offset">10dp</dimen>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <include
+       android:id="@+id/titlebar"
+       layout="@layout/titlebar_main" />
+    <include layout="@layout/titlebar_shadow" />
+
+    <TextView
+            android:id="@+id/about_text_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="版本:1.0.0"
+            android:layout_centerInParent="true"
+    />
+    <TextView
+            android:id="@+id/about_text_q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_text_version"
+            android:paddingTop="20dp"
+            android:text="任何问题请直接反馈:"
+            android:layout_centerHorizontal="true"
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_text_q"
+            android:text="weilei04@baidu.com"
+            android:layout_centerHorizontal="true"
+    />
+</RelativeLayout>

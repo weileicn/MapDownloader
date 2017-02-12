@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray"
+                tools:showIn="@layout/activity_main"
+                tools:context=".fragments.MainFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <com.baidumap.downloader.views.AutoScrollViewPager
+                    android:id="@+id/auto_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="155.3dp"
+            />
+            <LinearLayout
+                    android:id="@+id/banner_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:orientation="horizontal" />
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="13dp"
+                    android:background="@color/white" />
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_height"
+                    android:background="@color/transparent_black" />
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sub_title_height"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/light_gray"
+                    android:paddingLeft="@dimen/sub_title_padding_left"
+                    android:paddingRight="@dimen/sub_title_padding_right">
+
+                <TextView
+                        style="@style/text_second_emphasized"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="百度地图" />
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_height"
+
+                    android:background="@color/transparent_black" />
+
+            <LinearLayout
+                    android:id="@+id/map_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"
+                         />
+                <include android:id="@+id/map_category_item1"
+                         layout="@layout/map_category_item1"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"
+                         />
+                <include android:id="@+id/map_category_item2"
+                         layout="@layout/map_category_item2"/>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"
+                         />
+
+                <include android:id="@+id/map_category_item3"
+                         layout="@layout/map_category_item3"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"
+                        />
+                <include android:id="@+id/map_category_item4"
+                         layout="@layout/map_category_item4"/>
+                <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"/>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@color/light_gray"
+                        android:paddingLeft="@dimen/sub_title_padding_left"
+                        android:paddingRight="@dimen/sub_title_padding_right">
+                </View>
+                <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"/>
+                <include android:id="@+id/map_about_item"
+                         layout="@layout/map_about_item"/>
+
+                <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:background="@color/transparent_black"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
