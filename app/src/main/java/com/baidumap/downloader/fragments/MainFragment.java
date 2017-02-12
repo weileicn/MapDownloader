@@ -115,11 +115,15 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
             @Override
             public void destroyItem(ViewGroup container, int position, Object object) {
-                container.removeView((View) object);
+//                container.removeView((View) object);
             }
 
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
+                ViewGroup parent = (ViewGroup) mList.get(position).getParent();
+                if (parent != null) {
+                    parent.removeView(mList.get(position));
+                }
                 container.addView(mList.get(position));
                 return mList.get(position);
             }

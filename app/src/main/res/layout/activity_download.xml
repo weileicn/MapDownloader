@@ -5,5 +5,15 @@
     <include
             android:id="@+id/titlebar"
             layout="@layout/titlebar_main" />
-    <include layout="@layout/titlebar_shadow" />
+    <include
+            android:id="@+id/titlebar_shadow"
+            layout="@layout/titlebar_shadow" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_below="@id/titlebar_shadow"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Button"
+    />
 </RelativeLayout>

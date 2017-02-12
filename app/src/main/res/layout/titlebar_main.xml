@@ -5,6 +5,21 @@
     android:background="@drawable/header">
 
     <TextView
+            android:id="@+id/titlebar_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/titlebar_back_btn_selector"
+            android:gravity="center"
+            android:minWidth="67dp"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:text="返回"
+            android:textColor="@color/titlebar_left_btn_color"
+            android:textSize="13.5sp" />
+
+    <TextView
         android:id="@+id/titlebar_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
