@@ -1,7 +1,5 @@
 package com.baidumap.downloader.activities;
 
-import java.util.Map;
-
 import com.baidumap.downloader.R;
 import com.baidumap.downloader.network.Constants;
 import com.baidumap.downloader.utils.MapDownloader;
