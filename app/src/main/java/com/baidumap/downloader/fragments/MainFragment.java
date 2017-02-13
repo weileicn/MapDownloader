@@ -6,6 +6,7 @@ import java.util.List;
 import com.baidumap.downloader.R;
 import com.baidumap.downloader.activities.AboutActivity;
 import com.baidumap.downloader.activities.DownloadActivity;
+import com.baidumap.downloader.models.CategoryInfo;
 import com.baidumap.downloader.views.AutoScrollViewPager;
 import com.baidumap.downloader.views.ViewPager;
 
@@ -198,22 +199,26 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.map_category_item1:
                 Intent intent1 = new Intent(getActivity(), DownloadActivity.class);
-                intent1.putExtra("category",string1);
+                intent1.putExtra("categoryName",string1);
+                intent1.putExtra(CategoryInfo.KEY, CategoryInfo.VALUE_BASELINE);
                 startActivity(intent1);
                 break;
             case R.id.map_category_item2:
                 Intent intent2 = new Intent(getActivity(), DownloadActivity.class);
-                intent2.putExtra("category",string2);
+                intent2.putExtra("categoryName",string2);
+                intent2.putExtra(CategoryInfo.KEY, CategoryInfo.VALUE_HUAWEI);
                 startActivity(intent2);
                 break;
             case R.id.map_category_item3:
                 Intent intent3 = new Intent(getActivity(), DownloadActivity.class);
-                intent3.putExtra("category",string3);
+                intent3.putExtra("categoryName",string3);
+                intent3.putExtra(CategoryInfo.KEY, CategoryInfo.VALUE_SAMSUNG);
                 startActivity(intent3);
                 break;
             case R.id.map_category_item4:
                 Intent intent4 = new Intent(getActivity(), DownloadActivity.class);
-                intent4.putExtra("category",string4);
+                intent4.putExtra("categoryName",string4);
+                intent4.putExtra(CategoryInfo.KEY, CategoryInfo.VALUE_VIVO);
                 startActivity(intent4);
                 break;
             case R.id.map_about_item:
