@@ -1,6 +1,5 @@
 package com.baidumap.downloader.activities;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,14 +10,14 @@ import com.baidumap.downloader.R;
 import com.baidumap.downloader.models.Apk;
 import com.baidumap.downloader.models.CategoryInfo;
 import com.baidumap.downloader.models.Constants;
-import com.baidumap.downloader.utils.HttpUtil;
 import com.baidumap.downloader.utils.MapDownloader;
 import com.baidumap.downloader.utils.NetworkUtil;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -26,9 +25,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DownloadActivity extends BaseActivity {
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
     View button;
     View back;
-    String location = "http://oem.baidu.com/attachments/97396/BaiduMap_v9.1_samsung_1012497h_build1188_20170213.apk";
+    String location = "http://180.149.144.140/mcdull/app/MapAssistants.apk";
     String url = "http://lbsdevicesys.duapp.com/DeviceInfo-deleteoneitem.php";
 
     String mCategory;
@@ -83,7 +87,15 @@ public class DownloadActivity extends BaseActivity {
             int networkType = NetworkUtil.getNetworkType(this);
             if (networkType == Constants.NETWORK_WIFI) {
                 MapDownloader downloader = new MapDownloader(this);
-                downloader.DownloadApk(location);
+                PackageManager pm = getPackageManager();
+                boolean permission = (PackageManager.PERMISSION_GRANTED ==
+                                              pm.checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", "com.baidumap.downloader"));
+                if (permission) {
+                    downloader.DownloadApk(location);
+                }else {
+//                    Toast.makeText(this,"没有权限",Toast.LENGTH_SHORT).show();
+                    requestStoragePermissions(this);
+                }
             } else if (networkType == Constants.NETWORK_MOBILE) {
 //                showDialog( );
             } else if (networkType == Constants.NETWORK_NONE) {
@@ -114,4 +126,26 @@ public class DownloadActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Checks if the app has permission to write to device storage
+     *
+     * If the app does not has permission then the user will be prompted to grant permissions
+     *
+     * @param activity
+     */
+    private void requestStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
+
 }

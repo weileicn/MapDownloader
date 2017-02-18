@@ -6,7 +6,6 @@ import com.baidumap.downloader.R;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Request;
 import android.content.Context;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.webkit.MimeTypeMap;
