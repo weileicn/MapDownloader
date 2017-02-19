@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">地图口袋</string>
     <string name="system_downloader_error">Can not download, please check whether the system is open</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
