@@ -6,7 +6,7 @@ import java.util.List;
 import com.baidumap.downloader.R;
 import com.baidumap.downloader.activities.AboutActivity;
 import com.baidumap.downloader.activities.DownloadActivity;
-import com.baidumap.downloader.models.CategoryInfo;
+import com.baidumap.downloader.utils.CategoryInfo;
 import com.baidumap.downloader.views.AutoScrollViewPager;
 import com.baidumap.downloader.views.ViewPager;
 

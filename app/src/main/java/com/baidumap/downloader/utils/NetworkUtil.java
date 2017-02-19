@@ -1,7 +1,5 @@
 package com.baidumap.downloader.utils;
 
-import com.baidumap.downloader.models.Constants;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;

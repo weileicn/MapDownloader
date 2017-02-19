@@ -1,4 +1,4 @@
-package com.baidumap.downloader.models;
+package com.baidumap.downloader.utils;
 
 /**
  * Created by weilei04 on 2017/2/13.

@@ -10,17 +10,17 @@ import com.squareup.okhttp.Request;
 /**
  * Created by weilei04 on 2017/2/13.
  */
-public class HttpUtil {
-    private static HttpUtil sInstance;
+public class OKHttpUtil {
+    private static OKHttpUtil sInstance;
 
-    public static HttpUtil getInstance() {
+    public static OKHttpUtil getInstance() {
         if (sInstance == null) {
-            sInstance = new HttpUtil();
+            sInstance = new OKHttpUtil();
         }
         return sInstance;
     }
 
-    //http get
+    //GET
     public void request(String url,Callback callback) {
         OkHttpClient mOkHttpClient = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -30,7 +30,7 @@ public class HttpUtil {
         call.enqueue(callback);
     }
 
-    //http post
+    //POST
     public void request(String url,String key ,String value,Callback callback) {
         OkHttpClient mOkHttpClient = new OkHttpClient();
         FormEncodingBuilder builder = new FormEncodingBuilder();
