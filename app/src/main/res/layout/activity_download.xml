@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+>
+
+    <RelativeLayout
+            android:id="@+id/layout_shift"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+        <include
+                android:id="@+id/titlebar"
+                layout="@layout/titlebar_main" />
+
+        <FrameLayout
+                android:id="@+id/realcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/titlebar">
+            <fragment
+                    android:id="@+id/right_fragment"
+                    android:name="com.baidumap.downloader.fragments.DownloadFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <include layout="@layout/titlebar_shadow" />
+    </RelativeLayout>
+
+</RelativeLayout>
